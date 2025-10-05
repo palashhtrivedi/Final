@@ -1,0 +1,63 @@
+name: API Tests
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v3
+
+      # Setup Python 3.8
+      - name: Install Python 3.8
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.8
+
+      # Install Python Virtual ENV
+      - name: Install Python Virtual ENV
+        run: pip3 install virtualenv
+
+      # Setup Virtual ENV
+      - name: Virtual ENV
+        uses: actions/cache@v2
+        id: cache-venv
+        with:
+          path: venv
+          key: ${{ runner.os }}-venv-${{ hashFiles('**/requirements*.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-venv-
+
+      # Activate Virtual ENV
+      - name: Activate Virtual ENV
+        run: python -m venv venv && source venv/bin/activate && pip3 install -r requirements.txt
+
+      # Run tests
+      - name: Run tests
+        run: . venv/bin/activate && pytest
+
+      # # Create archive of dependencies
+      # - name: Create archive of dependencies
+      #   run: |
+      #     cd ./venv/lib/python3.8/site-packages/
+      #     zip -r9 ../../../../aws_deploy.zip .
+
+      # # Add API files to zip
+      # - name: Add API and Artifact files to zip
+      #   run: |
+      #     zip -g aws_deploy.zip -r ./artifacts ./scripts Dockerfile docker-compose.yml requirements.txt
+
+      # # Upload zip file artifact
+      # - name: Upload zip file artifact
+      #   uses: actions/upload-artifact@v3
+      #   with:
+      #     name: aws_deploy
+      #     path: ./aws_deploy.zip

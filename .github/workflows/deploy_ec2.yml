@@ -1,0 +1,32 @@
+name: Deploy to EC2
+
+on:
+  #   push:
+  #     branches: [ master ]
+  #   pull_request:
+  #     branches: [ master ]
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: SSH Remote Commands
+        uses: appleboy/ssh-action@v0.1.4
+        with:
+          # ssh host
+          host: ${{ secrets.HOST }}
+          # ssh username
+          username: ${{ secrets.USERNAME }}
+          # content of ssh private key. ex raw content of ~/.ssh/id_rsa
+          key: ${{ secrets.KEY }}
+
+          script: |
+            rm -rf mental-health-prediction
+            git clone git@github.com:IndraP24/mental-health-prediction.git
+            cd mental-health-prediction
+            docker-compose build
+            docker-compose up -d

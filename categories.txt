@@ -1,0 +1,255 @@
+gender
+Male      328
+Female    206
+Name: gender, dtype: int64
+
+
+age
+20-26         324
+13-19         156
+27-33          37
+34-44          16
+45 or more      1
+Name: age, dtype: int64
+
+
+education
+University      350
+College         130
+Professional     25
+School           22
+Unemployed        7
+Name: education, dtype: int64
+
+
+marital
+single      480
+married      53
+divorced      1
+Name: marital, dtype: int64
+
+
+income
+<10    402
+50+     45
+<20     41
+30+     30
+<30     16
+Name: income, dtype: int64
+
+
+loan
+no     463
+yes     71
+Name: loan, dtype: int64
+
+
+friend_no
+3+      240
+none    113
+3        78
+1        57
+2        46
+Name: friend_no, dtype: int64
+
+
+friend_help
+yes      308
+no       129
+maybe     97
+Name: friend_help, dtype: int64
+
+
+friend_interact
+1     143
+3+    114
+0     108
+2      89
+3      80
+Name: friend_interact, dtype: int64
+
+
+share_feel
+yes      240
+no       202
+maybe     90
+idk        2
+Name: share_feel, dtype: int64
+
+
+have_someone
+yes      253
+no       234
+maybe     47
+Name: have_someone, dtype: int64
+
+
+lonely
+sometimes    208
+yes          186
+no            76
+maybe         38
+never         26
+Name: lonely, dtype: int64
+
+
+bullied
+yes    313
+no     221
+Name: bullied, dtype: int64
+
+
+family_support
+yes      297
+no       178
+maybe     59
+Name: family_support, dtype: int64
+
+
+compare_life
+no     290
+yes    244
+Name: compare_life, dtype: int64
+
+
+social_media
+3+ hours    184
+<2 hours    143
+<3 hours    112
+<1 hour      95
+Name: social_media, dtype: int64
+
+
+hangout
+none    235
+1       105
+3+       92
+2        69
+3        33
+Name: hangout, dtype: int64
+
+
+home_time
+24     180
+<20    109
+<24     97
+<15     79
+<10     69
+Name: home_time, dtype: int64
+
+
+religious
+yes    357
+no     177
+Name: religious, dtype: int64
+
+
+goal
+yes      310
+no       167
+maybe     57
+Name: goal, dtype: int64
+
+
+suicidal
+yes      272
+no       174
+maybe     88
+Name: suicidal, dtype: int64
+
+
+sleep_disorder
+no     277
+yes    257
+Name: sleep_disorder, dtype: int64
+
+
+
+love_someone
+yes      312
+no       164
+maybe     58
+Name: love_someone, dtype: int64
+
+
+die_someone
+no       281
+yes      153
+maybe    100
+Name: die_someone, dtype: int64
+
+
+thoughts_command
+yes      231
+no       171
+maybe    132
+Name: thoughts_command, dtype: int64
+
+
+self_harm
+yes      255
+no       235
+maybe     44
+Name: self_harm, dtype: int64
+
+
+thoughts_acted
+yes    309
+no     225
+Name: thoughts_acted, dtype: int64
+
+
+thoughts_acted2
+no     277
+yes    257
+Name: thoughts_acted2, dtype: int64
+
+
+thoughts_time
+night        468
+evening       46
+Afternoon     12
+morning        8
+Name: thoughts_time, dtype: int64
+
+
+voices
+no     308
+yes    226
+Name: voices, dtype: int64
+
+
+harming_others
+no     443
+yes     91
+Name: harming_others, dtype: int64
+
+
+suicide
+no     290
+yes    244
+Name: suicide, dtype: int64
+
+
+suicidal_thoughts
+no     450
+yes     84
+Name: suicidal_thoughts, dtype: int64
+
+
+therapy
+no     470
+yes     64
+Name: therapy, dtype: int64
+
+
+
+
+Predicted Label:
+
+mental_disorder
+depression      153
+None            153
+stress          153
+Panic attack     75
+Name: mental_disorder, dtype: int64
